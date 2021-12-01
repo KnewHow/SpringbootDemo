@@ -1,4 +1,7 @@
 spring:
+    redis:
+        host: 127.0.0.1
+        port: 6379
     datasource:
         username: root
         password: root123456
@@ -11,3 +14,4 @@ mybatis:
     #开启驼峰命名
     configuration:
         map-underscore-to-camel-case: true
+
