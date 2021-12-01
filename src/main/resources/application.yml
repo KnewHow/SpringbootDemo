@@ -1,0 +1,13 @@
+spring:
+    datasource:
+        username: root
+        password: root123456
+        url: jdbc:mysql://127.0.0.1:3306/bank_system?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+    mapper-locations: classpath:mybatis/mapper/*.xml
+    type-aliases-package: com.knewhow.demo.pojo
+    #开启驼峰命名
+    configuration:
+        map-underscore-to-camel-case: true

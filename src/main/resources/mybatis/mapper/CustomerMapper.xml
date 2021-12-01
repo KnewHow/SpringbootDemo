@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.knewhow.demo.mapper.CustomerMapper">
+  <select id="queryCustomers" resultType="Customer">
+    select * from customer;
+  </select>
+  
+  <select id="queryCustomerPhone" resultType="Customer" >
+    select * from customer where phone_number = #{phoneNumber}
+  </select>
+  
+  <insert id="insertCustomer" parameterType="Customer">
+    insert into customer (phone_number, username, password, status, age, sex) values(#{phoneNumber}, #{username}, #{password}, #{status}, #{age}, #{sex})
+  </insert>
+
+  <update id="deleteById" >
+    update customer set status=-1 where id=#{id}
+  </update>
+
+  <update id="deleteByPhoneNumber">
+    update customer set status=-1 where phone_number=#{phoneNumber}
+  </update>
+</mapper>
